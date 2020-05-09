@@ -4,7 +4,7 @@
 
 const TelegramBot = require('node-telegram-bot-api'); // Подключаем фреймворк бота
 const Agent = require('socks5-https-client/lib/Agent'); // Обход блокировки через SOCKS5
-const preferences = require('./preferences.js'); // Модуль с данными
+const token = require('./preferences.js'); // Модуль с c SOCS5 портами и токеном
 const data = require('./data.js'); // Модуль с данными
 const utils = require('./utils.js'); // Модуль с универсальными функциями
 const fs = require('fs'); // Нативный модуль node.js
@@ -18,11 +18,11 @@ const bot = new TelegramBot(process.env.TELEGRAM_API_TOKEN, {
   request: {
     agentClass: Agent,
     agentOptions: {
-      socksHost: preferences.process.env.PROXY_SOCKS5_HOST,
-      socksPort: parseInt(preferences.process.env.PROXY_SOCKS5_PORT),
+      socksHost: process.env.PROXY_SOCKS5_HOST,
+      socksPort: parseInt(process.env.PROXY_SOCKS5_PORT),
       // Если есть регистрация на хосте
-      // socksUsername: preferences.process.env.PROXY_SOCKS5_USERNAME,
-      // socksPassword: preferences.process.env.PROXY_SOCKS5_PASSWORD,
+      // socksUsername: process.env.PROXY_SOCKS5_USERNAME,
+      // socksPassword: process.env.PROXY_SOCKS5_PASSWORD,
     }
   }
 })
