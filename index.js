@@ -55,11 +55,11 @@ bot.on('inline_query', query => {
   function randomImage(sourceArr) {
     let randomIndex = Math.floor(Math.random() * sourceArr.length);
     let picture = {
-        type: 'photo',
-        id: randomIndex.toString(),
-        photo_url: sourceArr[randomIndex],
-        thumb_url: sourceArr[randomIndex],
-      };
+      type: 'photo',
+      id: randomIndex.toString(),
+      photo_url: sourceArr[randomIndex],
+      thumb_url: sourceArr[randomIndex],
+    };
 
     //Проверяем совпадает ли случайное число с числом которое уже было добавлено в id объекта
     for (let i = 0; i < usedImagesForRandom.length; i++) {
@@ -67,7 +67,7 @@ bot.on('inline_query', query => {
         return randomImage(sourceArr);
       }
     }
-    
+
     //Добавляем новое число в массив проверки
     return usedImagesForRandom.push(picture);
   }
