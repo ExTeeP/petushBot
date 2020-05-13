@@ -2,9 +2,9 @@
   "name": "petushBot",
   "version": "1.0.0",
   "description": "",
-  "main": "js/index.js",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon js/index.js"
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "",

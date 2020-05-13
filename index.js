@@ -4,9 +4,9 @@
 
 const TelegramBot = require('node-telegram-bot-api'); // Подключаем фреймворк бота
 const Agent = require('socks5-https-client/lib/Agent'); // Обход блокировки через SOCKS5
-const token = require('./preferences.js'); // Модуль с c SOCS5 портами и токеном
-const data = require('./data.js'); // Модуль с данными
-const utils = require('./utils.js'); // Модуль с универсальными функциями
+const token = require('./js/preferences.js'); // Модуль с c SOCS5 портами и токеном
+const data = require('./js/data.js'); // Модуль с данными
+const utils = require('./js/utils.js'); // Модуль с универсальными функциями
 const fs = require('fs'); // Нативный модуль node.js
 
 // **************************************************************************************************
@@ -79,9 +79,9 @@ bot.on('inline_query', query => {
 
 // Закинуть картинку прямо с папки
 
-// bot.onText(/\/test/, (msg) => {
-//   const chatId = msg.chat.id;
-//   let pic = fs.readFileSync(__dirname + '/yoba.min.jpg');
+bot.onText(/\/test/, (msg) => {
+  const chatId = msg.chat.id;
+  let pic = fs.readFileSync(__dirname + '/img/PeKa/yoba.min.jpg');
 
-//   bot.sendPhoto(chatId, pic);
-// });
+  bot.sendPhoto(chatId, pic);
+});
