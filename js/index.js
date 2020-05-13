@@ -25,7 +25,7 @@ const bot = new TelegramBot(process.env.TELEGRAM_API_TOKEN, {
       // socksPassword: process.env.PROXY_SOCKS5_PASSWORD,
     }
   }
-})
+});
 
 console.log('БОТ ЗАПУЩЕН...');
 
@@ -59,7 +59,7 @@ bot.on('inline_query', query => {
         id: randomIndex.toString(),
         photo_url: sourceArr[randomIndex],
         thumb_url: sourceArr[randomIndex],
-      }
+      };
 
     //Проверяем совпадает ли случайное число с числом которое уже было добавлено в id объекта
     for (let i = 0; i < usedImagesForRandom.length; i++) {
@@ -71,11 +71,13 @@ bot.on('inline_query', query => {
     //Добавляем новое число в массив проверки
     return usedImagesForRandom.push(picture);
   }
-  console.log('Кидаю ЙОБУ')
+  console.log('Кидаю ЙОБУ');
   bot.answerInlineQuery(query.id, usedImagesForRandom, {
     cache_time: 0 // Оптимизация производительности
-  })
+  });
 });
+
+// Закинуть картинку прямо с папки
 
 // bot.onText(/\/test/, (msg) => {
 //   const chatId = msg.chat.id;
