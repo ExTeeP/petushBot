@@ -1,0 +1,10 @@
+{
+  "esversion": 6,
+  "undef": true,
+  "trailing": true,
+  "curly": true,
+  "strict": false,
+  "browser": true,
+  "devel": true,
+  "jquery": true
+}
