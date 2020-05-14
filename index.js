@@ -4,10 +4,11 @@
 
 const TelegramBot = require('node-telegram-bot-api'); // Подключаем фреймворк бота
 const Agent = require('socks5-https-client/lib/Agent'); // Обход блокировки через SOCKS5
+const process = require('process'); // Нативный модуль node.js
+const fs = require('fs'); // Нативный модуль node.js
 const token = require('./js/preferences.js'); // Модуль с c SOCS5 портами и токеном
 const data = require('./js/data.js'); // Модуль с данными
 const utils = require('./js/utils.js'); // Модуль с универсальными функциями
-const fs = require('fs'); // Нативный модуль node.js
 
 // **************************************************************************************************
 // Создание нового бота
